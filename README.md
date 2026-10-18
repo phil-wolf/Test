@@ -27,3 +27,16 @@ No build step, no dependencies. Either:
 - New hazards unlock as your score climbs: **splitters** that fragment into two shards when shot, **weavers** that drift in a sine wave, and a tanky 3-hit **juggernaut** worth a big bonus.
 
 High score is saved locally in your browser (`localStorage`).
+
+---
+
+# CashoM Ecosystem Map
+
+`cashom-ecosystem-map.html` is an interactive, editable mind map of the CashoM Cannabis Ecosystem whiteboard. It is one self-contained HTML file with no dependencies.
+
+- Click any text to edit it. Hover a box for ⠿ move, ✕ delete and 🎨 color.
+- **+ Add box** and **🔗 Add line** (click source, then target; Esc cancels).
+- Click a line for color, dash, label and delete. Drag its dot to bend it.
+- Autosaves to `localStorage`. **Download JSON** / **Load JSON** to back up or move the board. **Reset to original** restores the whiteboard layout.
+- Ctrl/Cmd+Z undoes the last 30 changes (Ctrl/Cmd+Shift+Z redoes).
+- Dotted-underlined words are handwriting to double-check.
