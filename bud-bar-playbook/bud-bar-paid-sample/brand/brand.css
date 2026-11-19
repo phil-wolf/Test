@@ -1,0 +1,63 @@
+/* =====================================================================
+   BRAND FILE — the only file you need to edit to change colors, fonts,
+   or the logo. After editing, run `python build.py` to rebuild the zips.
+   ===================================================================== */
+
+/* ---- Bundled fonts (no external CDN). Files live in brand/fonts/ ---- */
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-display-latin-600-normal.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Playfair Display";
+  src: url("fonts/playfair-display-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/source-sans-3-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/source-sans-3-latin-600-normal.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "Source Sans 3";
+  src: url("fonts/source-sans-3-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+:root {
+  /* ---- CashoM palette ---- */
+  --bg: #F7F2E9;              /* page background */
+  --surface: #FCF8F3;         /* cards, panels */
+  --text-heading: #402A1C;    /* headlines, top bar */
+  --text-body: #776658;       /* body copy (4.9:1 on --bg, passes WCAG AA) */
+  --accent: #98401F;          /* buttons, links, progress (white text 6.8:1) */
+  --brand-copper: #8E4E2F;    /* hover states, secondary accents */
+  --border-rosegold: #B07E56; /* borders, dividers, input outlines */
+
+  /* ---- Supporting colors (derived; change if you like) ---- */
+  --on-accent: #FFFFFF;       /* text on --accent buttons */
+  --on-heading: #FCF8F3;      /* text on the dark top bar */
+  --focus: #98401F;           /* keyboard focus ring */
+  --success: #2F6B3F;         /* correct answers */
+  --error: #9B2C2C;           /* incorrect answers */
+  --verify-bg: #FFE9A8;       /* [PHILIP TO VERIFY] highlight */
+  --verify-text: #4A3300;
+
+  /* ---- Fonts ---- */
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  /* ---- Shape ---- */
+  --radius: 8px;
+}
+
+/* ---- Logo ----
+   Replace brand/logo.svg with your own logo (keep the file name logo.svg,
+   or use logo.png and update "logo_file" in each course.json under content).
+   The logo sits on the dark --text-heading top bar, so use a light version. */

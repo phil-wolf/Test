@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="com.cashom.budbar.free" version="1.0.3"
+  xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2"
+  xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-1">
+    <organization identifier="ORG-1">
+      <title>Bud Bar Business Playbook: Is a Bud Bar Business Right for You? (v1.0.3)</title>
+      <item identifier="ITEM-1" identifierref="RES-1" isvisible="true">
+        <title>Bud Bar Business Playbook: Is a Bud Bar Business Right for You? (v1.0.3)</title>
+        <adlcp:masteryscore>80</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-1" type="webcontent" adlcp:scormtype="sco" href="index.html">
+      <file href="brand/brand.css"/>
+      <file href="brand/fonts/LICENSE-playfair-display.txt"/>
+      <file href="brand/fonts/LICENSE-source-sans-3.txt"/>
+      <file href="brand/fonts/playfair-display-latin-600-normal.woff2"/>
+      <file href="brand/fonts/playfair-display-latin-700-normal.woff2"/>
+      <file href="brand/fonts/source-sans-3-latin-400-normal.woff2"/>
+      <file href="brand/fonts/source-sans-3-latin-600-normal.woff2"/>
+      <file href="brand/fonts/source-sans-3-latin-700-normal.woff2"/>
+      <file href="brand/logo.svg"/>
+      <file href="course-data.js"/>
+      <file href="engine/debug-panel.js"/>
+      <file href="engine/player.css"/>
+      <file href="engine/player.js"/>
+      <file href="engine/scorm-api.js"/>
+      <file href="index.html"/>
+    </resource>
+  </resources>
+</manifest>

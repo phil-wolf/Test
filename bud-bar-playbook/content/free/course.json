@@ -1,0 +1,19 @@
+{
+  "id": "com.cashom.budbar.free",
+  "title": "Bud Bar Business Playbook: Is a Bud Bar Business Right for You?",
+  "short_title": "Bud Bar Business Playbook · Free",
+  "version": "1.0.3",
+  "package_folder": "bud-bar-free",
+  "zip_name": "bud-bar-free_scorm12.zip",
+  "logo_file": "logo.svg",
+  "completion": "quiz",
+  "passing_score": 80,
+  "modules": [
+    "01-what-is-a-bud-bar.md",
+    "02-business-models.md",
+    "03-costs-and-revenue.md",
+    "04-state-landscape.md",
+    "05-quiz.md",
+    "06-next-steps.md"
+  ]
+}

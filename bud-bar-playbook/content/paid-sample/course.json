@@ -1,0 +1,16 @@
+{
+  "id": "com.cashom.budbar.paidsample",
+  "title": "Bud Bar Business Playbook: Staffing & the Certified Service Standard (Sample)",
+  "short_title": "Bud Bar Business Playbook · Paid Sample",
+  "version": "1.0.3",
+  "package_folder": "bud-bar-paid-sample",
+  "zip_name": "bud-bar-paid-sample_scorm12.zip",
+  "logo_file": "logo.svg",
+  "completion": "end",
+  "passing_score": null,
+  "modules": [
+    "01-staffing-and-certified-service.md",
+    "02-knowledge-check.md",
+    "03-sample-complete.md"
+  ]
+}

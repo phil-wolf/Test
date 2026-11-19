@@ -1,0 +1,24 @@
+{
+  "note": "Example assumptions only. Every dollar figure below is a placeholder. Replace it with your own prices and quotes.",
+  "event_heading": "One event: your inputs",
+  "inputs": [
+    { "id": "guests",             "label": "Guests at the event",                     "default": 100, "money": false, "step": 1 },
+    { "id": "hours",              "label": "Service hours",                           "default": 4,   "money": false, "step": 0.5 },
+    { "id": "staff",              "label": "Staff on site",                           "default": 2,   "money": false, "step": 1 },
+    { "id": "hourly_rate",        "label": "Your service rate (per hour)",            "default": 250, "money": true,  "step": 5 },
+    { "id": "per_guest_fee",      "label": "Per-guest fee",                           "default": 5,   "money": true,  "step": 1 },
+    { "id": "staff_pay",          "label": "Staff pay (per person, per hour)",        "default": 25,  "money": true,  "step": 1 },
+    { "id": "setup_hours",        "label": "Paid setup + teardown hours",             "default": 2,   "money": false, "step": 0.5 },
+    { "id": "supplies_per_guest", "label": "Supplies cost per guest",                 "default": 2,   "money": true,  "step": 0.5 },
+    { "id": "other_costs",        "label": "Other event costs (travel, parking, insurance share)", "default": 150, "money": true, "step": 5 }
+  ],
+  "startup_heading": "Startup costs (example assumptions)",
+  "startup_costs": [
+    { "label": "Business formation and registration", "default": 300 },
+    { "label": "Mobile bar, display, and signage", "default": 1500 },
+    { "label": "Accessories and service supplies", "default": 500 },
+    { "label": "Branding, website, and booking tools", "default": 600 },
+    { "label": "THC ServePro staff certification [PHILIP TO VERIFY — current pricing]", "default": 300 },
+    { "label": "Insurance, first payment [PHILIP TO VERIFY]", "default": 800 }
+  ]
+}

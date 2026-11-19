@@ -1,0 +1,31 @@
+{
+  "list_note": "States where adult-use (recreational) cannabis is legal. This list was drafted from general knowledge and may be out of date. [PHILIP TO VERIFY — confirm the list is current]",
+  "columns": ["State", "Bud bar status", "Notes"],
+  "states": [
+    {"state": "Alaska", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Arizona", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "California", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Colorado", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Connecticut", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Delaware", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Illinois", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Maine", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Maryland", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Massachusetts", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Michigan", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Minnesota", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Missouri", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Montana", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Nevada", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "New Jersey", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "New Mexico", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "New York", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Ohio", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Oregon", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Rhode Island", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Vermont", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Virginia", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "Washington", "status": "[PHILIP TO VERIFY]", "notes": ""},
+    {"state": "District of Columbia (not a state)", "status": "[PHILIP TO VERIFY]", "notes": ""}
+  ]
+}

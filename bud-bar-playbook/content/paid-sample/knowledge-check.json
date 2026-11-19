@@ -1,0 +1,38 @@
+{
+  "_help": "\"answer\" is the number of the correct option, counting from 1. You can add or remove questions and options; the build checks that every answer number is valid.",
+  "questions": [
+    {
+      "question": "Who should own client and planner contact on the day of the event?",
+      "options": [
+        "Whichever server is least busy",
+        "The event lead",
+        "The venue manager",
+        "The setup runner"
+      ],
+      "answer": 2,
+      "feedback": "The event lead runs the day, including client and planner contact. That role is never optional."
+    },
+    {
+      "question": "Why does THC ServePro certification help you get booked by venues and planners?",
+      "options": [
+        "It shows every server trained to the same written standard of service",
+        "It makes the event legal in any state",
+        "It replaces the need for insurance",
+        "It lets you skip ID checks"
+      ],
+      "answer": 1,
+      "feedback": "Certification shows a consistent, documented standard. It does not make an event legal or replace permits or insurance."
+    },
+    {
+      "question": "Which is the best way to use certified service as a selling point?",
+      "options": [
+        "Promise clients there is no risk",
+        "Mention it only if the client asks",
+        "State it in proposals and offer a roster with certification dates",
+        "Tell clients certification covers their liability"
+      ],
+      "answer": 3,
+      "feedback": "Put it in writing and back it up with a roster. Don't overclaim what certification does."
+    }
+  ]
+}

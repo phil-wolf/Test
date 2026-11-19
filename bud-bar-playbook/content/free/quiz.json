@@ -1,0 +1,60 @@
+{
+  "_help": "\"answer\" is the number of the correct option, counting from 1. You can add or remove questions and options; the build checks that every answer number is valid.",
+  "questions": [
+    {
+      "question": "What best describes a bud bar business?",
+      "options": [
+        "A retail store that sells cannabis products",
+        "A mobile cannabis service that staffs and runs a bar setup at private events",
+        "A cannabis delivery app",
+        "A cannabis farm that sells wholesale"
+      ],
+      "answer": 2,
+      "feedback": "A bud bar sells a service at private events: setup, trained staff, education, and the guest experience."
+    },
+    {
+      "question": "Which group is the best source of repeat bookings?",
+      "options": [
+        "Walk-in shoppers",
+        "Wedding planners and event producers",
+        "Cannabis growers",
+        "Medical patients"
+      ],
+      "answer": 2,
+      "feedback": "Planners and event producers book many events a year. One good relationship can mean steady work."
+    },
+    {
+      "question": "Which bud bar business model is allowed?",
+      "options": [
+        "The service-fee / BYO model is allowed everywhere",
+        "The licensed operator model is allowed everywhere",
+        "It depends on state and local rules, so you must confirm before taking deposits",
+        "Any model is allowed if the venue agrees"
+      ],
+      "answer": 3,
+      "feedback": "Which model is allowed depends on the state, and city or county rules can be stricter. Confirm before you take a deposit."
+    },
+    {
+      "question": "An event brings in $1,500 in revenue and costs $650 to run. What is the profit for that event?",
+      "options": [
+        "$650",
+        "$850",
+        "$1,500",
+        "$2,150"
+      ],
+      "answer": 2,
+      "feedback": "Profit = revenue − costs. $1,500 − $650 = $850."
+    },
+    {
+      "question": "Your startup costs are $4,000 and you make $800 profit per event. About how many events until you earn back your startup costs?",
+      "options": [
+        "2 events",
+        "5 events",
+        "10 events",
+        "40 events"
+      ],
+      "answer": 2,
+      "feedback": "Break-even = startup costs ÷ profit per event. $4,000 ÷ $800 = 5 events."
+    }
+  ]
+}

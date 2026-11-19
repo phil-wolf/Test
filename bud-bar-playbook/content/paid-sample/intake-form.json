@@ -1,0 +1,71 @@
+{
+  "_help": "Field types: text (default), email, tel, date, time, number, textarea, checkboxes (needs \"options\"), signature. Add or remove fields freely.",
+  "title": "Client Event Intake Form",
+  "intro": "Complete this with the client on your first call, before you send a proposal.",
+  "sections": [
+    {
+      "heading": "Client",
+      "fields": [
+        {"label": "Client name"},
+        {"label": "Company (for corporate events)"},
+        {"label": "Phone", "type": "tel"},
+        {"label": "Email", "type": "email"},
+        {"label": "Planner or event producer (if any)"},
+        {"label": "Planner or producer phone / email"}
+      ]
+    },
+    {
+      "heading": "Event",
+      "fields": [
+        {"label": "Event type", "type": "checkboxes", "options": ["Wedding", "Engagement / rehearsal", "Corporate event", "Private party", "Brand activation", "Other"]},
+        {"label": "Event date", "type": "date"},
+        {"label": "Bar service start time", "type": "time"},
+        {"label": "Bar service end time", "type": "time"},
+        {"label": "Venue name"},
+        {"label": "Venue address"},
+        {"label": "Total guest count", "type": "number"},
+        {"label": "Estimated guests using the bud bar", "type": "number"}
+      ]
+    },
+    {
+      "heading": "Venue",
+      "fields": [
+        {"label": "Venue contact name and phone"},
+        {"label": "Venue has approved cannabis consumption on site", "type": "checkboxes", "options": ["Yes, in writing", "Yes, verbally", "Not yet confirmed", "No"]},
+        {"label": "Consumption area (indoor / outdoor, location)"},
+        {"label": "Venue rules or restrictions", "type": "textarea"},
+        {"label": "Load-in time and access notes"}
+      ]
+    },
+    {
+      "heading": "Service",
+      "fields": [
+        {"label": "Package", "type": "checkboxes", "options": ["Standard", "Premium", "Custom"]},
+        {"label": "Add-ons", "type": "checkboxes", "options": ["Branded accessories", "Lounge setup", "Caterer coordination", "Extra service hours"]},
+        {"label": "Number of certified servers", "type": "number"},
+        {"label": "Cannabis supply for this event [PHILIP TO VERIFY — allowed options depend on the state]", "type": "checkboxes", "options": ["Host supplies (BYO)", "Licensed partner", "Other"]},
+        {"label": "Guest age check plan [PHILIP TO VERIFY]"},
+        {"label": "Guest transportation plan (rideshare, shuttle, etc.)"}
+      ]
+    },
+    {
+      "heading": "Budget and next steps",
+      "fields": [
+        {"label": "Budget range"},
+        {"label": "Deposit amount and due date"},
+        {"label": "How did you hear about us?"},
+        {"label": "Notes", "type": "textarea"}
+      ]
+    },
+    {
+      "heading": "Sign-off",
+      "fields": [
+        {"label": "Client signature", "type": "signature"},
+        {"label": "Date", "type": "date"},
+        {"label": "Bud bar representative", "type": "signature"},
+        {"label": "Date", "type": "date"}
+      ]
+    }
+  ],
+  "footer": "This form records event details only. It is not a contract. [PHILIP TO VERIFY — have your service contract reviewed by an attorney]"
+}
