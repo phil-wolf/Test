@@ -1,0 +1,38 @@
+<title>Bud Bar Playbook Free Course</title>
+<link rel="stylesheet" href="brand/brand.css">
+<link rel="stylesheet" href="engine/player.css">
+<a class="skip-link" href="#screen">Skip to course content</a>
+<header class="topbar">
+  <div class="brand">
+    <img class="logo" src="brand/cashom-mark.png" alt="CashoM">
+    <span class="course-title">Bud Bar Business Playbook · Free</span>
+  </div>
+  <div class="top-actions" id="top-actions">
+    <button type="button" id="menu-btn" class="btn btn-secondary btn-small" aria-expanded="false" aria-controls="menu">Menu</button>
+  </div>
+</header>
+<div class="progress" id="progress" role="progressbar" aria-label="Course progress" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1">
+  <div class="progress-bar" id="progress-bar"></div>
+</div>
+<div class="layout">
+  <nav id="menu" class="menu" aria-label="Course modules" hidden>
+    <h2 class="menu-h">Modules</h2>
+    <ol id="menu-list"></ol>
+  </nav>
+  <main id="main">
+    <div id="banner" class="banner" role="status" hidden></div>
+    <div id="edit-toolbar" class="edit-toolbar" hidden></div>
+    <article id="screen" class="screen" tabindex="-1" aria-labelledby="screen-title"></article>
+  </main>
+</div>
+<footer class="navbar">
+  <button type="button" id="prev" class="btn btn-secondary">Back</button>
+  <span class="nav-mid"><span id="counter"></span><span id="next-hint" class="next-hint"></span></span>
+  <button type="button" id="next" class="btn btn-primary" aria-describedby="next-hint">Next</button>
+</footer>
+<noscript><p class="noscript">This course needs JavaScript turned on.</p></noscript>
+<script src="course-data.js"></script>
+<script src="engine/scorm-api.js"></script>
+<script src="engine/debug-panel.js"></script>
+<script src="engine/player.js"></script>
+<script src="engine/editor.js"></script>

@@ -17,6 +17,7 @@
   C.modules.forEach(function (m, mi) {
     m.screens.forEach(function (s, si) {
       screens.push({
+        key: m.id + '#' + si, file: m.file, screenIndex: si,
         module: mi, firstOfModule: si === 0, titleHtml: s.title_html, blocks: s.blocks,
         gated: s.blocks.some(function (b) { return b.embed === 'quiz'; })
       });
@@ -101,21 +102,36 @@
     var mod = C.modules[s.module];
     var art = $('screen');
     art.innerHTML = '';
+    // Saved on-page edits (preview page only) replace the built text.
+    var ov = (window.CourseEdits || {})[s.key] || null;
+    if (s.firstOfModule && C.logo_full) {
+      var opener = el('img', 'opener');
+      opener.src = 'brand/' + C.logo_full;
+      opener.alt = '';
+      art.appendChild(opener);
+    }
     var eyebrow = el('p', 'eyebrow');
     eyebrow.textContent = 'Module ' + (s.module + 1) + ' of ' + C.modules.length + ' · ' + mod.title;
-    var h1 = el('h1', null, s.titleHtml);
+    var h1 = el('h1', null, ov && ov.title_html ? ov.title_html : s.titleHtml);
     h1.id = 'screen-title';
     h1.tabIndex = -1;
     art.append(eyebrow, h1);
 
-    s.blocks.forEach(function (b) {
+    s.blocks.forEach(function (b, bi) {
       var box = el('div', 'block');
-      if (b.embed) EMBEDS[b.embed](box, b.data);
-      else box.innerHTML = b.html;
+      box.setAttribute('data-block', String(bi));
+      if (b.embed) { box.classList.add('block-locked'); EMBEDS[b.embed](box, b.data); }
+      else box.innerHTML = ov && ov.blocks && typeof ov.blocks[bi] === 'string' ? ov.blocks[bi] : b.html;
       art.appendChild(box);
     });
 
     if (st.i === LAST) {
+      if (C.logo_full) {
+        var endLogo = el('img', 'end-logo');
+        endLogo.src = 'brand/' + C.logo_full;
+        endLogo.alt = 'CashoM';
+        art.appendChild(endLogo);
+      }
       var v = el('p', 'version');
       v.textContent = C.title + ' · Version ' + C.version + ' · Built ' + C.built;
       art.appendChild(v);
@@ -127,6 +143,7 @@
     save();
     window.scrollTo(0, 0);
     if (moveFocus) h1.focus();
+    window.dispatchEvent(new CustomEvent('course:rendered', { detail: { screen: s } }));
   }
 
   function updateChrome() {
@@ -162,7 +179,7 @@
   }
 
   function go(i) {
-    if (i < 0 || i > LAST || exited) return;
+    if (i < 0 || i > LAST || exited || Player.locked) return;
     st.i = i;
     render(true);
   }
@@ -392,6 +409,19 @@
     }
     update();
   }
+
+  /* Small hook used by the preview page's edit mode (engine/editor.js). */
+  var Player = window.CoursePlayer = {
+    locked: false,
+    current: function () { return screens[st.i]; },
+    rerender: function () { render(false); },
+    setLocked: function (on) {
+      Player.locked = on;
+      $('prev').disabled = on || st.i === 0;
+      $('next').disabled = on || (screens[st.i].gated && st.quiz.s === null);
+      Array.prototype.forEach.call(document.querySelectorAll('.menu-item'), function (b) { b.disabled = on; });
+    }
+  };
 
   /* ---------------- Start ---------------- */
   document.addEventListener('DOMContentLoaded', function () {

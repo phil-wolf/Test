@@ -1,0 +1,48 @@
+/* =====================================================================
+   BRAND FILE — the only file you need to edit to change colors, fonts,
+   or the logo. After editing, run `python build.py` to rebuild the zips.
+   Look matches the CashoM / THC ServePro slide style: lilac canvas,
+   deep red Montserrat type, copper line work, white "takeaway" bands.
+   ===================================================================== */
+
+/* ---- Bundled fonts (no external CDN). Files live in brand/fonts/ ---- */
+@font-face { font-family: "Montserrat"; src: url("fonts/montserrat-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/montserrat-latin-500-normal.woff2") format("woff2"); font-weight: 500; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/montserrat-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Montserrat"; src: url("fonts/montserrat-latin-700-normal.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+
+:root {
+  /* ---- CashoM palette ---- */
+  --bg: #EDCEF1;              /* lilac page canvas (from the slide deck) */
+  --surface: #FFFFFF;         /* white bands, quiz and calculator panels */
+  --surface-soft: #F7E9F9;    /* light lilac: table headers, hovers */
+  --text-heading: #940A0A;    /* deep red headlines */
+  --text-body: #940A0A;       /* body copy (6.4:1 on lilac, passes WCAG AA) */
+  --accent: #8D4D2D;          /* copper: buttons, progress (white text 6.5:1) */
+  --brand-copper: #8D4D2D;    /* copper line work, eyebrows */
+  --border-rosegold: #B07E56; /* borders, dividers, input outlines */
+
+  /* ---- Supporting colors ---- */
+  --on-accent: #FFFFFF;       /* text on copper buttons */
+  --focus: #940A0A;           /* keyboard focus ring */
+  --success: #2F6B3F;         /* correct answers */
+  --error: #940A0A;           /* incorrect answers */
+  --verify-bg: #FFE9A8;       /* [PHILIP TO VERIFY] highlight */
+  --verify-text: #4A3300;
+
+  /* ---- Fonts (the deck uses Montserrat throughout) ----
+     For serif headlines instead, add a serif @font-face above and
+     change --font-display. */
+  --font-display: "Montserrat", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+  --font-body: "Montserrat", "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+
+  /* ---- Shape ---- */
+  --radius: 6px;
+}
+
+/* ---- Logo ----
+   brand/cashom-mark.png  = the diamond mark (header)
+   brand/cashom-logo.png  = mark + CashoM wordmark (module openers, end screen, form)
+   Replace either file with a sharper version (same name) and rebuild.
+   An SVG works too: save it as the same name with .svg and update
+   "logo_mark" / "logo_full" in each course.json under content. */

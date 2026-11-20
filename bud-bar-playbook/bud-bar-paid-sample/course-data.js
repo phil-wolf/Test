@@ -2,13 +2,16 @@
 window.COURSE_DATA = {
  "id": "com.cashom.budbar.paidsample",
  "title": "Bud Bar Business Playbook: Staffing & the Certified Service Standard (Sample)",
- "version": "1.0.3",
- "built": "2026-11-19 16:30",
+ "version": "1.0.4",
+ "built": "2026-11-20 19:22",
  "completion": "end",
  "passing_score": null,
+ "logo_mark": "cashom-mark.png",
+ "logo_full": "cashom-logo.png",
  "modules": [
   {
    "id": "01-staffing-and-certified-service",
+   "file": "01-staffing-and-certified-service.md",
    "title": "Staffing & the Certified Service Standard",
    "screens": [
     {
@@ -77,6 +80,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "02-knowledge-check",
+   "file": "02-knowledge-check.md",
    "title": "Knowledge check",
    "screens": [
     {
@@ -131,6 +135,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "03-sample-complete",
+   "file": "03-sample-complete.md",
    "title": "Sample complete",
    "screens": [
     {

@@ -2,13 +2,16 @@
 window.COURSE_DATA = {
  "id": "com.cashom.budbar.free",
  "title": "Bud Bar Business Playbook: Is a Bud Bar Business Right for You?",
- "version": "1.0.3",
- "built": "2026-11-19 16:30",
+ "version": "1.0.4",
+ "built": "2026-11-20 19:22",
  "completion": "quiz",
  "passing_score": 80,
+ "logo_mark": "cashom-mark.png",
+ "logo_full": "cashom-logo.png",
  "modules": [
   {
    "id": "01-what-is-a-bud-bar",
+   "file": "01-what-is-a-bud-bar.md",
    "title": "What a bud bar is",
    "screens": [
     {
@@ -47,6 +50,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "02-business-models",
+   "file": "02-business-models.md",
    "title": "Business models",
    "screens": [
     {
@@ -85,6 +89,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "03-costs-and-revenue",
+   "file": "03-costs-and-revenue.md",
    "title": "Startup costs and event math",
    "screens": [
     {
@@ -214,6 +219,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "04-state-landscape",
+   "file": "04-state-landscape.md",
    "title": "State landscape",
    "screens": [
     {
@@ -244,6 +250,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "05-quiz",
+   "file": "05-quiz.md",
    "title": "Quiz",
    "screens": [
     {
@@ -320,6 +327,7 @@ window.COURSE_DATA = {
   },
   {
    "id": "06-next-steps",
+   "file": "06-next-steps.md",
    "title": "Next steps",
    "screens": [
     {

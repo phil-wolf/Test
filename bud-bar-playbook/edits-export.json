@@ -1,0 +1,15 @@
+[
+ {
+  "course": "com.cashom.budbar.free",
+  "key": "01-what-is-a-bud-bar#0",
+  "file": "01-what-is-a-bud-bar.md",
+  "screen": 0,
+  "original_title": "What a bud bar is",
+  "title_html": "What a bud bar is (and is not)",
+  "blocks": [
+   "<p>A bud bar is a mobile cannabis service for private events. You bring a staffed bar setup to the event, and trained staff guide guests through the cannabis part of the event. Most events book 4 to 6 weeks ahead.</p><p>Think of it like a mobile cocktail bar company, but for cannabis. Your product is the <strong><a href=\"https://cashom.example/services\" target=\"_blank\" rel=\"noopener\">service</a></strong>: setup, staff, education, and a well-run guest experience.</p><div class=\"callout\"><p>How cannabis gets to an event, who supplies it, and who can hand it to a guest depends on state and local rules. <mark class=\"verify\">[PHILIP TO VERIFY]</mark></p></div>"
+  ],
+  "course_version": "1.0.4",
+  "updated_at": "2026-11-20T19:22:41.931Z"
+ }
+]

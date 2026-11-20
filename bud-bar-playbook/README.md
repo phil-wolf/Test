@@ -117,7 +117,19 @@ Needs Python 3.8 or newer. No extra packages.
 
 ### Branding
 
-Colors, fonts and logo are all in **`brand/brand.css`** (the CashoM palette is already set). To swap the logo, replace `brand/logo.svg`. It sits on the dark top bar, so use a light version. Rebuild after any change.
+The look follows the CashoM slide style: lilac canvas, deep red Montserrat type, copper accents, white "takeaway" bands (any `>` callout in the content becomes one). Colors and fonts are all in **`brand/brand.css`**. The logo files are `brand/cashom-mark.png` (header) and `brand/cashom-logo.png` (module openers, end screen, intake form). Replace either with a sharper version under the same name, then rebuild.
+
+---
+
+## 2b. Edit text on the online preview pages
+
+The claude.ai preview links have an **Edit text** button. Only you, and people you give Editor access in the page's Share menu, can see it.
+
+1. Open a screen and click **Edit text**. Outlined text can be changed: the screen title and all regular text. Use the toolbar for bold, italic, lists, links, and a `[PHILIP TO VERIFY]` flag.
+2. Click **Save**. Everyone viewing the link sees the new text right away, with an "Edited on this page" tag. **Revert to original** undoes a screen.
+3. The SCORM zips don't change yet. When you're done, tell Claude **"apply my edits"**. Claude exports the saved edits, runs `python apply_edits.py`, which writes them into the Markdown files in `content/` (untouched lines stay exactly as they were), rebuilds the zips, and republishes the pages.
+
+Quiz questions, the calculator, and the state table are edited in their JSON files, not on the page. The edit mode exists only on the preview pages (`preview/` folder); it is never in the SCORM zips.
 
 ---
 
@@ -160,7 +172,7 @@ To see exactly what the course sent, open the registration's details or launch h
 - **Quiz answers are in the course files.** That's normal for simple SCORM courses, but a determined learner could find them. Fine for this test; use LMS-side quizzing if that ever matters.
 - **Schema files:** the official SCORM 1.2 `.xsd` files aren't bundled. SCORM Cloud and most LMSs don't need them. If a strict LMS asks for them, they can be added to `engine/` and listed by the build.
 - **Accessibility:** works by keyboard (Tab / Enter / Space; Esc closes the mobile menu); there's a skip link; focus moves to each new screen's heading; quiz results are announced to screen readers; quiz options use fieldsets and legends; text contrast meets WCAG AA.
-- **Fonts:** Playfair Display (headlines) and Source Sans 3 (body), bundled in `brand/fonts/`, both under the SIL Open Font License (license files included).
+- **Fonts:** Montserrat, bundled in `brand/fonts/` under the SIL Open Font License (license file included).
 
 ## 5. Before real learners see this
 
