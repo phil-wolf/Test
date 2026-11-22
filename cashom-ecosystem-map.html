@@ -87,7 +87,7 @@ button.on { background: var(--blue); color: var(--paper); border-color: var(--bl
 }
 .sizer { position: relative; }
 .canvas {
-  position: relative; width: 1880px; height: 1200px; transform-origin: 0 0;
+  position: relative; width: 1880px; height: 2280px; transform-origin: 0 0;
   background-color: var(--paper);
   background-image: radial-gradient(var(--dot) 1.2px, transparent 1.3px);
   background-size: 22px 22px;
@@ -95,7 +95,7 @@ button.on { background: var(--blue); color: var(--paper); border-color: var(--bl
 .canvas.connecting { cursor: crosshair; }
 .canvas.connecting .draggable { cursor: crosshair; }
 
-svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; z-index: 0; pointer-events: none; overflow: visible; }
+svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 2280px; z-index: 0; pointer-events: none; overflow: visible; }
 .conn .vis { fill: none; stroke-width: 2; stroke-linecap: round; }
 .conn.on .vis { stroke-width: 3.2; }
 .conn .hit { fill: none; stroke: transparent; stroke-width: 14; pointer-events: stroke; cursor: pointer; }
@@ -115,6 +115,7 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
   border-radius: 50%; border-width: 3px; display: flex; flex-direction: column; align-items: center; justify-content: center;
   font-size: 17px; font-weight: 700; padding: 14px 20px; box-shadow: 0 6px 18px var(--shadow);
 }
+.node.dashed { border-style: dashed; }
 .node.list { text-align: left; padding: 12px 16px; border-radius: 12px; }
 .c-green  { --c: var(--green);  --cs: var(--green-soft); }
 .c-blue   { --c: var(--blue);   --cs: var(--blue-soft); }
@@ -176,9 +177,11 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
 .h-drag { top: -11px; right: -11px; cursor: grab; font-size: 13px; }
 .h-del  { top: -11px; left: -11px; color: var(--red); }
 .h-style{ bottom: -11px; right: -11px; cursor: pointer; font-size: 11px; }
+.h-dash { bottom: -11px; left: -11px; cursor: pointer; font-size: 11px; }
 .node.circle > .h-drag { top: 6%; right: 6%; }
 .node.circle > .h-del  { top: 6%; left: 6%; }
 .node.circle > .h-style{ bottom: 6%; right: 6%; }
+.node.circle > .h-dash { bottom: 6%; left: 6%; }
 .draggable:hover > .h, .draggable:focus-within > .h, .draggable.dragging > .h { opacity: 1; pointer-events: auto; }
 .canvas.connecting .h { opacity: 0 !important; pointer-events: none !important; }
 
@@ -195,9 +198,13 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
   position: absolute; right: 12px; bottom: 12px; z-index: 7; background: var(--surface); border: 1px solid var(--line);
   border-radius: 10px; padding: 8px 10px; font: 400 11.5px/1.3 var(--font-body); color: var(--ink);
   box-shadow: 0 6px 16px var(--shadow); display: grid; gap: 4px; max-width: 220px;
+  max-height: calc(100% - 24px); overflow: auto; box-sizing: border-box;
 }
 .legend b { font: 700 11px/1 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 .legend div { display: flex; align-items: center; gap: 7px; }
+.legend b + b, .legend .sec { margin-top: 4px; }
+.sw-line { width: 18px; border-radius: 5px; background: var(--surface); }
+.sw-line.dashed { border-style: dashed; }
 .sw { width: 12px; height: 12px; border-radius: 50%; border: 2px solid var(--c); background: var(--cs); flex: none; box-sizing: border-box; }
 .legend .v { text-decoration: underline dotted var(--red); text-underline-offset: 3px; }
 .legend button { justify-self: start; padding: 4px 8px; font-size: 11px; }
@@ -247,7 +254,7 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     </div>
   </div>
   <span class="status" id="saveState" role="status"></span>
-  <p class="hint" id="hint">Click any text to edit it. Hover a box for <b>⠿</b> move, <b>✕</b> delete, <b>🎨</b> color. Click a line for its tools; drag its dot to bend it (double-click the dot to straighten).</p>
+  <p class="hint" id="hint">Click any text to edit it. Hover a box for <b>⠿</b> move, <b>✕</b> delete, <b>🎨</b> color, <b>┅</b> dashed outline. Click a line for its tools; drag its dot to bend it (double-click the dot to straighten).</p>
 </header>
 
 <div class="stage">
@@ -276,6 +283,13 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     <div class="c-gold"><span class="sw"></span>$ Get Paid action list</div>
     <div class="c-black"><span class="sw"></span>Neutral / new</div>
     <div><span class="v">dotted</span>&nbsp;= check handwriting</div>
+    <b class="sec">Hospitality ecosystem</b>
+    <div class="c-purple"><span class="sw"></span>Ethos pillars</div>
+    <div class="c-green"><span class="sw"></span>Organizations</div>
+    <div class="c-blue"><span class="sw"></span>Functions</div>
+    <div class="c-red"><span class="sw"></span>Reciprocity practices</div>
+    <div class="c-black"><span class="sw sw-line dashed"></span>Dashed outline = neutral body</div>
+    <div class="c-black"><span class="sw sw-line"></span>Solid outline = Philip’s business</div>
     <button type="button" id="legendToggle">Hide key</button>
   </aside>
 </div>
@@ -298,8 +312,8 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
 <script>
 (() => {
   'use strict';
-  const W = 1880, H = 1200;
-  const KEY = 'cashom-ecosystem-map:v1', ZKEY = 'cashom-ecosystem-map:zoom', LKEY = 'cashom-ecosystem-map:legend';
+  const W = 1880, H = 2280;
+  const KEY = 'cashom-ecosystem-map:v1', ZKEY = 'cashom-ecosystem-map:zoom', LKEY = 'cashom-ecosystem-map:legend', SKEY = 'cashom-ecosystem-map:sections';
   const COLORS = ['green', 'blue', 'purple', 'red', 'gold', 'black'];
   const KINDS = ['node', 'side-note', 'plain-text', 'line-label'];
   const SHAPES = ['pill', 'circle', 'list'];
@@ -313,7 +327,7 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
   const V = s => `<span class="verify" title="Handwriting – click to correct">${s}</span>`;
   const M = '<span class="money" title="Revenue">$</span> ';
   const P = s => `<span class="price">${s}</span>`;
-  const N = (id, x, y, w, color, html, shape = 'pill', h) => ({ id, kind: 'node', x, y, w, h, color, shape, html });
+  const N = (id, x, y, w, color, html, shape = 'pill', h, dash) => ({ id, kind: 'node', x, y, w, h, color, shape, html, ...(dash ? { dash: true } : {}) });
   const T = (id, x, y, w, color, html) => ({ id, kind: 'plain-text', x, y, w, color, shape: 'pill', html });
   const S = (id, x, y, w, html) => ({ id, kind: 'side-note', x, y, w, color: 'red', shape: 'pill', html });
   const L = (id, x, y, w, html) => ({ id, kind: 'line-label', x, y, w, color: 'black', shape: 'pill', html });
@@ -420,6 +434,60 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
   ['node-gamified', 'node-optimize', 'node-platform'].forEach(t => C('node-consumer', t, 'green'));
   C('node-platform', 'node-alex', 'purple');
 
+  /* ---------------- section 2: Cannabis Hospitality Ecosystem (below the original map) ---------------- */
+  const SUB = s => `<div class="sub">${s}</div>`;
+  const HOSP_ELEMENTS = [
+    N('hx-banner', 640, 1260, 600, 'purple', '<b>Ethos: Reciprocity</b> · a cycle that flows forward'),
+    N('hx-trust', 120, 1400, 210, 'purple', '<b>Trust</b>' + SUB('Transparency, Guest care')),
+    N('hx-people', 480, 1400, 210, 'purple', '<b>People</b>' + SUB('Staff, Collaboration')),
+    N('hx-community', 1190, 1400, 210, 'purple', '<b>Community</b>' + SUB('Repair, Open knowledge')),
+    N('hx-plant', 1550, 1400, 210, 'purple', '<b>Plant &amp; Land</b>' + SUB('Regeneration, Ritual')),
+    N('hx-hub', 780, 1660, 320, 'green', '<b class="big">Cannabis Hospitality Ecosystem</b>', 'circle', 160),
+    // neutral bodies (dashed outline), left
+    N('hx-assoc', 430, 1550, 220, 'green', 'Association' + SUB('neutral body'), 'circle', 100, true),
+    N('hx-assoc-1', 40, 1508, 270, 'blue', 'Advocacy &amp; policy'),
+    N('hx-assoc-2', 40, 1563, 270, 'blue', 'Industry data'),
+    N('hx-assoc-3', 40, 1618, 270, 'blue', 'Awards'),
+    N('hx-assoc-4', 40, 1673, 270, 'blue', 'Holds the Reciprocity Fund'),
+    N('hx-guild', 430, 1840, 220, 'green', 'Guild' + SUB('neutral body'), 'circle', 100, true),
+    N('hx-guild-1', 40, 1798, 270, 'blue', 'Credentials'),
+    N('hx-guild-2', 40, 1853, 270, 'blue', 'Craft standards'),
+    N('hx-guild-3', 40, 1908, 270, 'blue', 'Career paths'),
+    N('hx-guild-4', 40, 1963, 270, 'blue', 'Mentoring'),
+    // Philip's businesses (solid outline), right
+    N('hx-edu', 1230, 1540, 220, 'green', 'Education' + SUB('Philip’s business'), 'circle', 100),
+    N('hx-edu-1', 1570, 1520, 270, 'blue', 'CashoM'),
+    N('hx-edu-2', 1570, 1575, 270, 'blue', 'THC ServePro'),
+    N('hx-edu-3', 1570, 1630, 270, 'blue', 'Consumer Edu'),
+    N('hx-play', 1230, 1740, 220, 'green', 'Playbooks' + SUB('Philip’s business'), 'circle', 100),
+    N('hx-play-1', 1570, 1720, 270, 'blue', 'Event &amp; service playbooks'),
+    N('hx-play-2', 1570, 1775, 270, 'blue', 'Risk &amp; compliance templates'),
+    N('hx-play-3', 1570, 1830, 270, 'blue', 'RVP'),
+    N('hx-list', 1230, 1940, 220, 'green', 'Listing Site' + SUB('Philip’s business'), 'circle', 100),
+    N('hx-list-1', 1570, 1920, 270, 'blue', 'Venues <span class="sub">(where to go)</span>'),
+    N('hx-list-2', 1570, 1975, 270, 'blue', 'Vendors <span class="sub">(who to hire)</span>'),
+    N('hx-list-3', 1570, 2030, 270, 'blue', 'Credential badges'),
+    // reciprocity in practice, below the hub
+    N('hx-recip', 815, 1960, 250, 'green', 'Reciprocity in Practice', 'circle', 100),
+    N('hx-recip-1', 430, 2130, 270, 'red', '<b>Reciprocity Fund</b>' + SUB('voluntary student gifts, held by a neutral 501(c)(3)')),
+    N('hx-recip-2', 730, 2130, 200, 'red', '<b>Steward badge</b>' + SUB('recognition, no discounts')),
+    N('hx-recip-3', 960, 2130, 190, 'red', '<b>Company match</b>'),
+    N('hx-recip-4', 1180, 2130, 200, 'red', '<b>Pay it forward</b>' + SUB('scholarships')),
+    S('hx-note-rule', 40, 2060, 300, 'Rule: neutral bodies earn trust; your businesses run operations.'),
+  ];
+  const nOrig = DEFAULT.connections.length;
+  ['hx-trust', 'hx-people', 'hx-community', 'hx-plant'].forEach(t => C('hx-banner', t, 'purple'));
+  C('hx-banner', 'hx-hub', 'purple', { dash: true });
+  ['hx-assoc', 'hx-guild', 'hx-edu', 'hx-play', 'hx-list', 'hx-recip'].forEach(t => C('hx-hub', t, 'green'));
+  [1, 2, 3, 4].forEach(i => C('hx-assoc', 'hx-assoc-' + i, 'blue'));
+  [1, 2, 3, 4].forEach(i => C('hx-guild', 'hx-guild-' + i, 'blue'));
+  [1, 2, 3].forEach(i => C('hx-edu', 'hx-edu-' + i, 'blue'));
+  [1, 2, 3].forEach(i => C('hx-play', 'hx-play-' + i, 'blue'));
+  [1, 2, 3].forEach(i => C('hx-list', 'hx-list-' + i, 'blue'));
+  [1, 2, 3, 4].forEach(i => C('hx-recip', 'hx-recip-' + i, 'red'));
+  const HOSP_CONNS = DEFAULT.connections.slice(nOrig);
+  DEFAULT.elements.push(...HOSP_ELEMENTS);
+
   /* ---------------- state ---------------- */
   let conns = [];
   let selConn = null, hoverConn = null, hideTimer = 0;
@@ -471,7 +539,8 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
         id: e.id, kind: e.kind, x: clamp(num(e.x), 0, W - 20), y: clamp(num(e.y), 0, H - 20),
         w: num(e.w) > 0 ? clamp(num(e.w), 40, 900) : undefined, h: num(e.h) > 0 ? clamp(num(e.h), 20, 900) : undefined,
         color: colorOf(e.color), shape: SHAPES.includes(e.shape) ? e.shape : 'pill',
-        html: typeof e.html === 'string' ? e.html.slice(0, 20000) : ''
+        html: typeof e.html === 'string' ? e.html.slice(0, 20000) : '',
+        ...(e.dash && e.kind === 'node' ? { dash: true } : {})
       });
     }
     const cids = new Set(), connections = [];
@@ -501,7 +570,10 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     el.classList.add('draggable');
     addHandle(el, 'h-drag', '⠿', 'Drag to move');
     addHandle(el, 'h-del', '✕', 'Delete');
-    if (el.dataset.kind === 'node') addHandle(el, 'h-style', '🎨', 'Change color');
+    if (el.dataset.kind === 'node') {
+      addHandle(el, 'h-style', '🎨', 'Change color');
+      addHandle(el, 'h-dash', '┅', 'Dashed / solid outline');
+    }
   }
   function makeEl(e) {
     const d = document.createElement('div');
@@ -511,6 +583,7 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     d.style.left = e.x + 'px'; d.style.top = e.y + 'px';
     if (e.w) d.style.width = e.w + 'px';
     if (e.h) d.style.minHeight = e.h + 'px';
+    if (e.dash) { d.classList.add('dashed'); d.dataset.dash = '1'; }
     d.innerHTML = sanitize(e.html);
     prepare(d);
     return d;
@@ -527,6 +600,7 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
         };
         if (el.style.width) o.w = num(parseFloat(el.style.width));
         if (el.style.minHeight) o.h = num(parseFloat(el.style.minHeight));
+        if (el.dataset.dash) o.dash = true;
         return o;
       }),
       connections: conns.map(c => ({ ...c }))
@@ -724,6 +798,10 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     } else if (h.classList.contains('h-style')) {
       const next = COLORS[(COLORS.indexOf(el.dataset.color) + 1) % COLORS.length];
       el.classList.remove('c-' + el.dataset.color); el.classList.add('c-' + next); el.dataset.color = next;
+      commit();
+    } else if (h.classList.contains('h-dash')) {
+      if (el.dataset.dash) delete el.dataset.dash; else el.dataset.dash = '1';
+      el.classList.toggle('dashed', !!el.dataset.dash);
       commit();
     }
   });
@@ -964,10 +1042,25 @@ svg.lines { position: absolute; left: 0; top: 0; width: 1880px; height: 1200px; 
     if (raw) { start = normalize(JSON.parse(raw)); restored = !!start; }
   } catch (err) { start = null; }
   if (!start || !start.elements.length) { start = normalize(JSON.parse(JSON.stringify(DEFAULT))); restored = false; }
+  // one-time: add the hospitality section to boards saved before it existed (later deletions are respected)
+  let sections = [];
+  try { sections = JSON.parse(localStorage.getItem(SKEY) || '[]'); } catch (err) { sections = []; }
+  if (!Array.isArray(sections)) sections = [];
+  let addedSection = false;
+  if (restored && !sections.includes('hospitality')) {
+    const have = new Set(start.elements.map(e => e.id));
+    if (!HOSP_ELEMENTS.some(e => have.has(e.id))) {
+      const extra = normalize({ elements: HOSP_ELEMENTS, connections: HOSP_CONNS });
+      start.elements.push(...extra.elements); start.connections.push(...extra.connections);
+      addedSection = true;
+    }
+  }
+  try { if (!sections.includes('hospitality')) localStorage.setItem(SKEY, JSON.stringify([...sections, 'hospitality'])); } catch (err) { /* convenience only */ }
   build(start);
   saved = snapshot();
   syncButtons();
   saveState.textContent = restored ? 'Restored your saved board' : 'Original layout';
+  if (addedSection) { persist(); saveState.textContent = 'Restored your board + added the hospitality section below'; }
 
   let z = null, lmin = false;
   try { z = parseFloat(localStorage.getItem(ZKEY)); lmin = localStorage.getItem(LKEY) === '1'; } catch (err) { z = null; }
